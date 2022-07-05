@@ -1,11 +1,11 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Bruno Britto
+- Pedro Henrique Durand Reis
+- Raylane Nara Correa Sousa
 
-Link do Surge: www.link.com.br
+Link do Surge: <<link do surge>>
 
 O que funciona:
 - Item 1
