@@ -19,7 +19,7 @@ const useRequestData = (initialData, url) => {
       });
   }, [url]);
 
-  return data;
+  return [data];
 };
 
 export default useRequestData;
