@@ -7,15 +7,24 @@ import { goToPokeDetailsPage, goToPokedexPage } from "../../routes/coordinator";
 export const HomePage = () => {
   const navigate = useNavigate();
 
-  const getPokemons = useRequestData([], `${BASE_URL}/pokemon`).results;
-  console.log(getPokemons);
+  const getPokemons = useRequestData([], `${BASE_URL}/pokemon`)[0].results;
 
   return (
     <div>
       <h1>HomePage</h1>
       {getPokemons &&
         getPokemons.map((pokemon, index) => {
-          return <p key={pokemon.name}>{`${index}: ${pokemon.name} `}</p>;
+          return (
+            <div key={pokemon.name}>
+              <p>{pokemon.name}</p>
+              <button>Adicionar ao Pokedex</button>
+              <button
+                onClick={() => goToPokeDetailsPage(navigate, pokemon.name)}
+              >
+                Detalhes
+              </button>
+            </div>
+          );
         })}
 
       <button

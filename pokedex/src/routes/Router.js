@@ -10,7 +10,7 @@ function Router() {
       <Routes>
         <Route path={"/"} element={<HomePage />} />
         <Route path={"/pokedex"} element={<PokedexPage />} />
-        <Route path={"/pokemon"} element={<PokeDetailsPage />} />
+        <Route path={"/pokemon/:name"} element={<PokeDetailsPage />} />
         <Route path="*" element={<ErrorPage />}></Route>
       </Routes>
     </BrowserRouter>
