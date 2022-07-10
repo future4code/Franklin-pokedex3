@@ -17,6 +17,7 @@ export const PokeDetailsCard = (props) => {
     specialDefense,
     speed,
     image,
+    abilities,
   } = props;
 
   const renderCard = () => {
@@ -30,7 +31,7 @@ export const PokeDetailsCard = (props) => {
           gutterBottom
           align={"center"}
           variant={"h6"}
-          color={"#a89a3b"}
+          color={"black"}
           marginBottom={4}
         >
           Stats
@@ -42,41 +43,66 @@ export const PokeDetailsCard = (props) => {
         >{`${name}`}</Typography>
 
         <ProgressBar
-          style={{ marginBottom: 20 }}
+          style={{ marginBottom: 20, height: 25, fontSize: 15 }}
           animated
           now={hp}
           label={"HP"}
         />
         <ProgressBar
-          style={{ marginBottom: 20 }}
+          style={{ marginBottom: 20, height: 25, fontSize: 15 }}
           animated
           now={attack}
           label={"Ataque"}
         />
         <ProgressBar
-          style={{ marginBottom: 20 }}
+          style={{ marginBottom: 20, height: 25, fontSize: 15 }}
           animated
           now={defense}
           label={"Defesa"}
         />
         <ProgressBar
-          style={{ marginBottom: 20 }}
+          style={{ marginBottom: 20, height: 25, fontSize: 15 }}
           animated
           now={specialAttack}
           label={"Ataque Especial"}
         />
         <ProgressBar
-          style={{ marginBottom: 20 }}
+          style={{ marginBottom: 20, height: 25, fontSize: 15 }}
           animated
           now={specialDefense}
           label={"Defesa Especial"}
         />
         <ProgressBar
-          style={{ marginBottom: 20 }}
+          style={{ marginBottom: 20, height: 25, fontSize: 15 }}
           animated
           now={speed}
-          label={"Speed"}
+          label={"Velocidade"}
         />
+        <Typography
+          gutterBottom
+          align={"center"}
+          variant={"h6"}
+          color={"black"}
+          marginTop={4}
+          marginBottom={4}
+        >
+          Moves
+        </Typography>
+
+        {abilities.map((ability) => {
+          console.log(ability);
+          return (
+            <Typography
+              align={"start"}
+              variant={"h6"}
+              color={"#black"}
+              marginTop={4}
+              marginBottom={4}
+            >
+              {ability.ability.name}
+            </Typography>
+          );
+        })}
       </>
     );
   };

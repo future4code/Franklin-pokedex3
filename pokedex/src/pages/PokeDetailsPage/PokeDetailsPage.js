@@ -32,13 +32,14 @@ export const PokeDetailsPage = () => {
               speed={pokemon.stats[5].base_stat}
               image={pokemon.sprites.other.dream_world.front_default}
               key={pokemon.name}
+              abilities={pokemon.abilities}
             />
           );
         })}
 
       <CardGoBackButtonDiv>
         <Button
-          style={{ marginTop: 20, width: 300 }}
+          style={{ marginTop: 20, width: 300, marginBottom: 19 }}
           variant="contained"
           color="primary"
           onClick={() => {
