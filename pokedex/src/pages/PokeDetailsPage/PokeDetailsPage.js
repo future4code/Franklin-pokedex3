@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../../components/Loading/Loading";
 import { BASE_URL } from "../../constants/url";
 import useRequestData from "../../hooks/useRequestData";
-import { goToLastPage } from "../../routes/coordinator";
+import { goToHomePage } from "../../routes/coordinator";
 import { PokeDetailsCard } from "./PokeDetailsCard";
 import { CardGoBackButton, CardGoBackButtonDiv } from "./styled";
 
@@ -36,19 +36,6 @@ export const PokeDetailsPage = () => {
             />
           );
         })}
-
-      <CardGoBackButtonDiv>
-        <Button
-          style={{ marginTop: 20, width: 300, marginBottom: 19 }}
-          variant="contained"
-          color="primary"
-          onClick={() => {
-            goToLastPage(navigate);
-          }}
-        >
-          Voltar
-        </Button>
-      </CardGoBackButtonDiv>
     </div>
   );
 };

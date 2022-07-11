@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const CardImgDiv = styled.div`
   display: flex;
   justify-content: center;
-  margin: 60px 0;
+  margin: 40px 0;
 `;
 
 export const CardMediaStyled = styled.img`
