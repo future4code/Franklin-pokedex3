@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { goToLastPage } from "../../routes/coordinator";
+import { goToHomePage } from "../../routes/coordinator";
 
 export const PokedexPage = () => {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ export const PokedexPage = () => {
       <h1>PokedexPage</h1>
       <button
         onClick={() => {
-          goToLastPage(navigate);
+          goToHomePage(navigate);
         }}
       >
         Voltar
