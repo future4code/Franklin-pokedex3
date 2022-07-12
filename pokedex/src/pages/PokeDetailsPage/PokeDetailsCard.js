@@ -5,7 +5,7 @@ import { CardActionArea, CardMedia } from "@material-ui/core";
 import { Typography } from "@mui/material";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { CardImgDiv, CardMediaStyled } from "./styled";
+import { CardImgDiv, CardMediaStyled} from "./styled";
 
 export const PokeDetailsCard = (props) => {
   const {

@@ -2,9 +2,9 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
-import { ArrowBackIconFixed, LogoImageStyled, StyledToolbar } from "./styled";
+import { ArrowBackIconFixed, BtnPokedex, LogoImageStyled, StyledToolbar } from "./styled";
 import logo from "../../assets/logo-pokemon.png";
-import { goToHomePage } from "../../routes/coordinator";
+import { goToPokedexPage, goToHomePage } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
@@ -27,6 +27,13 @@ export const Header = () => {
             color="inherit"
             aria-label="menu"
           ></IconButton>
+          <BtnPokedex
+        onClick={() => {
+          goToPokedexPage(navigate);
+        }}
+      >
+        Minha Pokedex
+      </BtnPokedex>
         </StyledToolbar>
       </AppBar>
     </Box>
