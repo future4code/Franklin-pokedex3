@@ -26,7 +26,6 @@ export const Header = () => {
             edge="start"
             color="inherit"
             aria-label="menu"
-            f
           ></IconButton>
         </StyledToolbar>
       </AppBar>
