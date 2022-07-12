@@ -1,20 +1,42 @@
-import { PokeDiv } from "./styled";
+import { PokeButton, PokeDiv, PokeImage, PokeImageDiv } from "./styled";
 import pokeball from "../../assets/pokeball-icon.png";
+import { getPokemonsDetails } from "../../services/getPokemonDetails";
+import { useEffect, useState } from "react";
+import { goToPokeDetailsPage } from "../../routes/coordinator";
+import { useNavigate } from "react-router-dom";
 
 export const PokeCard = (props) => {
+  const navigate = useNavigate();
+  const [imageUrl, setImageUrl] = useState();
+  const [pokedexNumber, setPokedexNumber] = useState();
+
+  const onClickButton = (pokemon) => {
+    goToPokeDetailsPage(navigate, pokemon);
+  };
+
+  useEffect(() => {
+    const loadImage = async () => {
+      const data = await getPokemonsDetails(props.name);
+      setImageUrl(data.sprites.other.dream_world.front_default);
+      setPokedexNumber(data.game_indices[19].game_index);
+    };
+    loadImage();
+  }, [props.name]);
+
   return (
     <PokeDiv>
       <div>
-        <img alt="pokeball" src={pokeball} /> {props.number}
+        <img alt="pokeball" src={pokeball} /> {`0${pokedexNumber}`}
       </div>
-      <div>
-        <img alt="imagem" src={props.img} />
-
+      <PokeImageDiv>
+        <PokeImage alt="imagem" src={imageUrl} />
         <p>{props.name}</p>
-      </div>
+      </PokeImageDiv>
       <div>
-        <button>Botao 1</button>
-        <button>Botao 2</button>
+        <PokeButton onClick={() => onClickButton(props.name)}>
+          Detalhes
+        </PokeButton>
+        <PokeButton>Adicionar</PokeButton>
       </div>
     </PokeDiv>
   );
