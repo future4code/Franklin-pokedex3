@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PokeCard } from "../../components/PokeCard/PokeCard";
 import { PokedexButton } from "../../components/PokedexButton/PokedexButton";
 import { BASE_URL } from "../../constants/url";
 import useRequestData from "../../hooks/useRequestData";
-import { goToPokeDetailsPage } from "../../routes/coordinator";
 import { PokedexGrid, ScreenContainer } from "./styled";
 
 export const HomePage = () => {
   const navigate = useNavigate();
+  const [offset, setOffset] = useState(0);
+  const [limit, setLimit] = useState(20);
 
-  const getPokemons = useRequestData([], `${BASE_URL}/pokemon`)[0].results;
+  const getPokemons = useRequestData(
+    [],
+    `${BASE_URL}/pokemon/?offset=${offset}&limit=${limit}`
+  )[0].results;
+
+  useEffect(() => {}, [offset, limit]);
 
   return (
     <ScreenContainer>
@@ -25,10 +31,17 @@ export const HomePage = () => {
       <PokedexButton text={"MINHA POKEDEX"} />
       <button
         onClick={() => {
-          goToPokeDetailsPage(navigate);
+          if (offset >= 20) setOffset(offset - 20);
         }}
       >
-        PokeDetailsPage
+        Voltar Página
+      </button>
+      <button
+        onClick={() => {
+          if (offset < 1134) setOffset(offset + 20);
+        }}
+      >
+        Próxima Página
       </button>
     </ScreenContainer>
   );

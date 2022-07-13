@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import { CardActionArea, CardMedia } from "@material-ui/core";
+import { CardActionArea } from "@material-ui/core";
 import { Typography } from "@mui/material";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -90,7 +90,6 @@ export const PokeDetailsCard = (props) => {
         </Typography>
 
         {abilities.map((ability) => {
-          console.log(ability);
           return (
             <Typography
               align={"start"}
