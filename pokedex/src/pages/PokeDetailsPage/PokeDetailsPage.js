@@ -6,7 +6,7 @@ import { BASE_URL } from "../../constants/url";
 import useRequestData from "../../hooks/useRequestData";
 import { goToHomePage } from "../../routes/coordinator";
 import { PokeDetailsCard } from "./PokeDetailsCard";
-import { CardGoBackButton, CardGoBackButtonDiv } from "./styled";
+import { CardGoBackButton, CardGoBackButtonDiv, ContainerDetail } from "./styled";
 
 export const PokeDetailsPage = () => {
   const navigate = useNavigate();
