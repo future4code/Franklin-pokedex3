@@ -1,13 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
+import { PokeCard } from "../../components/PokeCard/PokeCard";
 import { PokedexButton } from "../../components/PokedexButton/PokedexButton";
+import { FavoriteContext } from "../../context/favoritesContext";
+import { PokedexGrid } from "../HomePage/styled";
+import { ScreenContainer } from "./styledPokedex";
 
 export const PokedexPage = () => {
-  const [pokedex, setPokedex] = useState([]);
+  const { favorite } = React.useContext(FavoriteContext);
 
   return (
-    <div>
-      <h1>PokedexPage</h1>
+    <ScreenContainer>
+      <PokedexGrid>
+        {favorite &&
+          favorite.map((pokemon) => {
+            return <PokeCard name={pokemon} />;
+          })}
+      </PokedexGrid>
       <PokedexButton text={"POKEDEX COMPLETA"} />
-    </div>
+    </ScreenContainer>
   );
 };
