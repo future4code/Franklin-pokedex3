@@ -4,7 +4,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 export const StyledToolbar = styled(Toolbar)`
   display: flex;
- flex-direction: row;
+  flex-direction: row;
   width: 100%;
   justify-content: space-between;
   padding-bottom: 15px;
@@ -12,20 +12,8 @@ export const StyledToolbar = styled(Toolbar)`
 `;
 
 export const LogoImageStyled = styled.img`
-  width: 200px;
-  margin-right: 50px;
+  width: 130px;
+  margin-right: 15px;
 `;
 
 export const ArrowBackIconFixed = styled(ArrowBackIcon)``;
-
-
-export const BtnPokedex = styled.button`
-
-  border: outset 3px;
-  border-radius: 10px;
-  background-color: #ED3237;
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 30px;
-
-`

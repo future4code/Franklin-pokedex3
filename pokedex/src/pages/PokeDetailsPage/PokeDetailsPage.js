@@ -1,19 +1,15 @@
-import { Button } from "@material-ui/core";
 import React from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Loading from "../../components/Loading/Loading";
+import { PokedexButton } from "../../components/PokedexButton/PokedexButton";
 import { BASE_URL } from "../../constants/url";
 import useRequestData from "../../hooks/useRequestData";
-import { goToHomePage } from "../../routes/coordinator";
 import { PokeDetailsCard } from "./PokeDetailsCard";
-import { CardGoBackButton, CardGoBackButtonDiv, ContainerDetail } from "./styled";
 
 export const PokeDetailsPage = () => {
-  const navigate = useNavigate();
   const { name } = useParams();
 
   const getPokemonDetail = useRequestData([], `${BASE_URL}/pokemon/${name}`);
-  // console.log(getPokemonDetail);
 
   return (
     <div>
@@ -36,6 +32,7 @@ export const PokeDetailsPage = () => {
             />
           );
         })}
+      <PokedexButton text={"MINHA POKEDEX"} />
     </div>
   );
 };
