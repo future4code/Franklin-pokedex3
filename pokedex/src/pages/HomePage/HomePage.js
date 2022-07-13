@@ -1,9 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { PokeCard } from "../../components/PokeCard/PokeCard";
+import { PokedexButton } from "../../components/PokedexButton/PokedexButton";
 import { BASE_URL } from "../../constants/url";
 import useRequestData from "../../hooks/useRequestData";
-import { goToPokeDetailsPage, goToPokedexPage } from "../../routes/coordinator";
+import { goToPokeDetailsPage } from "../../routes/coordinator";
 import { PokedexGrid, ScreenContainer } from "./styled";
 
 export const HomePage = () => {
@@ -21,13 +22,7 @@ export const HomePage = () => {
             );
           })}
       </PokedexGrid>
-      <button
-        onClick={() => {
-          goToPokedexPage(navigate);
-        }}
-      >
-        Pokedex
-      </button>
+      <PokedexButton text={"MINHA POKEDEX"} />
       <button
         onClick={() => {
           goToPokeDetailsPage(navigate);
