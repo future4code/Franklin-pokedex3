@@ -16,7 +16,6 @@ export const PokeDetailsPage = () => {
       {getPokemonDetail &&
         getPokemonDetail[0].length !== 0 &&
         getPokemonDetail.map((pokemon) => {
-          console.log(pokemon);
           return (
             <PokeDetailsCard
               name={pokemon.name}

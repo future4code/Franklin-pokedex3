@@ -28,8 +28,11 @@ export const PokeCard = (props) => {
   useEffect(() => {
     const loadImage = async () => {
       const data = await getPokemonsDetails(props.name);
-      setImageUrl(data.sprites.other.dream_world.front_default);
-      setPokedexNumber(data.game_indices[19].game_index);
+      data.game_indices.length !== 0
+        ? setImageUrl(data.sprites.other.dream_world.front_default)
+        : setImageUrl(data.sprites.front_default);
+      // setPokedexNumber(data.game_indices[19].game_index);
+      setPokedexNumber(data.id);
     };
     loadImage();
   }, [props.name]);
