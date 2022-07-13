@@ -1,17 +1,28 @@
 import { PokeButton, PokeDiv, PokeImage, PokeImageDiv } from "./styled";
 import pokeball from "../../assets/pokeball-icon.png";
 import { getPokemonsDetails } from "../../services/getPokemonDetails";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { goToPokeDetailsPage } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
+import { FavoriteContext } from "../../context/favoritesContext";
 
 export const PokeCard = (props) => {
   const navigate = useNavigate();
   const [imageUrl, setImageUrl] = useState();
   const [pokedexNumber, setPokedexNumber] = useState();
+  const { favorite, setFavorite } = React.useContext(FavoriteContext);
 
   const onClickButton = (pokemon) => {
     goToPokeDetailsPage(navigate, pokemon);
+  };
+
+  const addFavorite = (pokemon) => {
+    const myFavorites = [...favorite];
+    const pokeIndex = myFavorites.indexOf(pokemon);
+    myFavorites.includes(pokemon)
+      ? myFavorites.splice(pokeIndex, 1)
+      : myFavorites.push(pokemon);
+    setFavorite(myFavorites);
   };
 
   useEffect(() => {
@@ -36,7 +47,15 @@ export const PokeCard = (props) => {
         <PokeButton onClick={() => onClickButton(props.name)}>
           Detalhes
         </PokeButton>
-        <PokeButton>Adicionar</PokeButton>
+        {favorite.includes(props.name) ? (
+          <PokeButton onClick={() => addFavorite(props.name)}>
+            Remover
+          </PokeButton>
+        ) : (
+          <PokeButton onClick={() => addFavorite(props.name)}>
+            Adicionar
+          </PokeButton>
+        )}
       </div>
     </PokeDiv>
   );
