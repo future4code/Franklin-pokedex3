@@ -12,3 +12,17 @@ export const PokedexGrid = styled.div`
 export const ScreenContainer = styled.div`
   margin-top: 50px;
 `;
+
+export const ButtonDiv = styled.div`
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+`;
+
+export const PokeButton = styled.button`
+  height: 30px;
+  background: #ed3237;
+  color: white;
+  border: none;
+  margin: 6px;
+`;

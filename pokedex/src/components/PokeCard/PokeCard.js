@@ -10,20 +10,20 @@ export const PokeCard = (props) => {
   const navigate = useNavigate();
   const [imageUrl, setImageUrl] = useState();
   const [pokedexNumber, setPokedexNumber] = useState();
-  const { favorite, setFavorite } = React.useContext(FavoriteContext);
+  const { favorite, addFavorite } = React.useContext(FavoriteContext);
 
   const onClickButton = (pokemon) => {
     goToPokeDetailsPage(navigate, pokemon);
   };
 
-  const addFavorite = (pokemon) => {
-    const myFavorites = [...favorite];
-    const pokeIndex = myFavorites.indexOf(pokemon);
-    myFavorites.includes(pokemon)
-      ? myFavorites.splice(pokeIndex, 1)
-      : myFavorites.push(pokemon);
-    setFavorite(myFavorites);
-  };
+  // const addFavorite = (pokemon) => {
+  //   const myFavorites = [...favorite];
+  //   const pokeIndex = myFavorites.indexOf(pokemon);
+  //   myFavorites.includes(pokemon)
+  //     ? myFavorites.splice(pokeIndex, 1)
+  //     : myFavorites.push(pokemon);
+  //   setFavorite(myFavorites);
+  // };
 
   useEffect(() => {
     const loadImage = async () => {

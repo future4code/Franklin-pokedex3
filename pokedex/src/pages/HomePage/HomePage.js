@@ -4,7 +4,7 @@ import { PokeCard } from "../../components/PokeCard/PokeCard";
 import { PokedexButton } from "../../components/PokedexButton/PokedexButton";
 import { BASE_URL } from "../../constants/url";
 import useRequestData from "../../hooks/useRequestData";
-import { PokedexGrid, ScreenContainer } from "./styled";
+import { ButtonDiv, PokeButton, PokedexGrid, ScreenContainer } from "./styled";
 
 export const HomePage = () => {
   const navigate = useNavigate();
@@ -29,20 +29,22 @@ export const HomePage = () => {
           })}
       </PokedexGrid>
       <PokedexButton text={"MINHA POKEDEX"} />
-      <button
-        onClick={() => {
-          if (offset >= 20) setOffset(offset - 20);
-        }}
-      >
-        Voltar Página
-      </button>
-      <button
-        onClick={() => {
-          if (offset < 1134) setOffset(offset + 20);
-        }}
-      >
-        Próxima Página
-      </button>
+      <ButtonDiv>
+        <PokeButton
+          onClick={() => {
+            if (offset >= 20) setOffset(offset - 20);
+          }}
+        >
+          Voltar Página
+        </PokeButton>
+        <PokeButton
+          onClick={() => {
+            if (offset < 1134) setOffset(offset + 20);
+          }}
+        >
+          Próxima Página
+        </PokeButton>
+      </ButtonDiv>
     </ScreenContainer>
   );
 };
