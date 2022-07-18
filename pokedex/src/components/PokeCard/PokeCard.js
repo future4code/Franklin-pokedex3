@@ -14,6 +14,7 @@ export const PokeCard = (props) => {
 
   const onClickButton = (pokemon) => {
     goToPokeDetailsPage(navigate, pokemon);
+    console.log(typeof pokemon);
   };
 
   useEffect(() => {
