@@ -13,11 +13,18 @@ export const PokeDiv = styled.div`
 
 export const PokeImageDiv = styled.div`
   height: 100px;
-  margin: 20px;
+  margin: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+
+export const PokeImageNumberDiv = styled.div`
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  margin-left: 1rem;
 `;
 
 export const PokeImage = styled.img`
@@ -31,4 +38,5 @@ export const PokeButton = styled.button`
   color: white;
   border: none;
   margin: 6px;
+  font-family: "Electrolize";
 `;

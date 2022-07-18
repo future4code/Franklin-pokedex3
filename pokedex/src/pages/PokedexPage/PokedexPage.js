@@ -1,4 +1,5 @@
 import React from "react";
+import Loading from "../../components/Loading/Loading";
 import { PokeCard } from "../../components/PokeCard/PokeCard";
 import { PokedexButton } from "../../components/PokedexButton/PokedexButton";
 import { FavoriteContext } from "../../context/favoritesContext";
@@ -11,10 +12,13 @@ export const PokedexPage = () => {
   return (
     <ScreenContainer>
       <PokedexGrid>
-        {favorite &&
+        {favorite ? (
           favorite.map((pokemon) => {
             return <PokeCard name={pokemon} />;
-          })}
+          })
+        ) : (
+          <Loading />
+        )}
       </PokedexGrid>
       <PokedexButton text={"POKEDEX COMPLETA"} />
     </ScreenContainer>

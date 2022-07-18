@@ -23,6 +23,7 @@ export const PokeButton = styled.button`
   height: 30px;
   background: #ed3237;
   color: white;
+  font-family: "Electrolize";
   border: none;
   margin: 6px;
 `;
