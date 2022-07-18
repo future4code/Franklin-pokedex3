@@ -16,22 +16,12 @@ export const PokeCard = (props) => {
     goToPokeDetailsPage(navigate, pokemon);
   };
 
-  // const addFavorite = (pokemon) => {
-  //   const myFavorites = [...favorite];
-  //   const pokeIndex = myFavorites.indexOf(pokemon);
-  //   myFavorites.includes(pokemon)
-  //     ? myFavorites.splice(pokeIndex, 1)
-  //     : myFavorites.push(pokemon);
-  //   setFavorite(myFavorites);
-  // };
-
   useEffect(() => {
     const loadImage = async () => {
       const data = await getPokemonsDetails(props.name);
       data.game_indices.length !== 0
         ? setImageUrl(data.sprites.other.dream_world.front_default)
         : setImageUrl(data.sprites.front_default);
-      // setPokedexNumber(data.game_indices[19].game_index);
       setPokedexNumber(data.id);
     };
     loadImage();
@@ -50,7 +40,7 @@ export const PokeCard = (props) => {
         <PokeButton onClick={() => onClickButton(props.name)}>
           Detalhes
         </PokeButton>
-        {favorite.includes(props.name) ? (
+        {favorite && favorite.includes(props.name) ? (
           <PokeButton onClick={() => addFavorite(props.name)}>
             Remover
           </PokeButton>
