@@ -19,8 +19,10 @@ export const Header = () => {
               goToHomePage(navigate);
             }}
           />
-          <LogoImageStyled src={logo} />
-          <IconButton
+          <LogoImageStyled onClick={() => {
+              goToHomePage(navigate);
+            }} src={logo} />
+          <IconButton 
             size="large"
             edge="start"
             color="inherit"

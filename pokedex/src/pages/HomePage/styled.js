@@ -26,4 +26,12 @@ export const PokeButton = styled.button`
   font-family: "Electrolize";
   border: none;
   margin: 6px;
+  &:hover,
+  &:focus {
+    transition: transform .2s;
+    transform: scale(1.1);
+  }
+  &:active{
+    transform: scale(1.05);
+  }
 `;

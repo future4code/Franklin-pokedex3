@@ -16,4 +16,13 @@ export const LogoImageStyled = styled.img`
   margin-right: 15px;
 `;
 
-export const ArrowBackIconFixed = styled(ArrowBackIcon)``;
+export const ArrowBackIconFixed = styled(ArrowBackIcon)`
+    &:hover,
+  &:focus {
+    transition: transform .2s;
+    transform: scale(2.1);
+  }
+  &:active{
+    transform: scale(2.05);
+  }
+`;
