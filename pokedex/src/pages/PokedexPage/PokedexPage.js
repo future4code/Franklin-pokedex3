@@ -1,4 +1,5 @@
 import React from "react";
+import Loading from "../../components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
 import { PokeCard } from "../../components/PokeCard/PokeCard";
 import { PokedexButton } from "../../components/PokedexButton/PokedexButton";
@@ -14,10 +15,13 @@ export const PokedexPage = () => {
   return (
     <ScreenContainer>
       <PokedexGrid>
-        {favorite &&
+        {favorite ? (
           favorite.map((pokemon) => {
-            return <PokeCard key={pokemon.id} name={pokemon} />;
-          })}
+            return <PokeCard name={pokemon} />;
+          })
+        ) : (
+          <Loading />
+        )}
       </PokedexGrid>
       <PokedexButton
         onClick={goToHomePage(navigate)}

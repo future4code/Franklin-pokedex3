@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../components/Loading/Loading";
 import { PokeCard } from "../../components/PokeCard/PokeCard";
 import { PokedexButton } from "../../components/PokedexButton/PokedexButton";
 import { BASE_URL } from "../../constants/url";
@@ -21,12 +22,15 @@ export const HomePage = () => {
   return (
     <ScreenContainer>
       <PokedexGrid>
-        {getPokemons &&
+        {getPokemons ? (
           getPokemons.map((pokemon) => {
             return (
               <PokeCard key={pokemon.name} number={13} name={pokemon.name} />
             );
-          })}
+          })
+        ) : (
+          <Loading />
+        )}
       </PokedexGrid>
       <PokedexButton text={"MINHA POKEDEX"} />
       <ButtonDiv>

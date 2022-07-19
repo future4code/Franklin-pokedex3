@@ -5,7 +5,7 @@ import { CardActionArea } from "@material-ui/core";
 import { Typography } from "@mui/material";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { CardImgDiv, CardMediaStyled } from "./styled";
+import { CardImgDiv, CardMediaStyled, MovesDiv, TypesDiv } from "./styled";
 
 export const PokeDetailsCard = (props) => {
   const {
@@ -18,6 +18,7 @@ export const PokeDetailsCard = (props) => {
     speed,
     image,
     abilities,
+    types,
   } = props;
 
   const renderCard = () => {
@@ -28,55 +29,119 @@ export const PokeDetailsCard = (props) => {
         </CardImgDiv>
 
         <Typography
+          align="center"
+          variant="h4"
+          fontFamily={"Electrolize"}
+          marginBottom={4}
+          style={{ textTransform: "capitalize" }}
+        >{`${name}`}</Typography>
+
+        <Typography
+          gutterBottom
+          align={"center"}
+          fontFamily={"Electrolize"}
+          variant={"h6"}
+          color={"black"}
+          marginBottom={4}
+        >
+          Types
+        </Typography>
+        {types &&
+          types.map((type) => {
+            return (
+              <Typography
+                key={type.type.name}
+                fontFamily={"Electrolize"}
+                variant={"h6"}
+                color={"black"}
+                align={"center"}
+                marginBottom={2.5}
+                style={{
+                  textTransform: "capitalize",
+                }}
+              >
+                <TypesDiv>{type.type.name}</TypesDiv>
+              </Typography>
+            );
+          })}
+
+        <Typography
           gutterBottom
           align={"center"}
           variant={"h6"}
           color={"black"}
           marginBottom={4}
+          marginTop={4}
+          fontFamily={"Electrolize"}
         >
           Stats
         </Typography>
-        <Typography
-          align="center"
-          variant="h4"
-          marginBottom={10}
-        >{`${name}`}</Typography>
 
         <ProgressBar
-          style={{ marginBottom: 20, height: 25, fontSize: 15 }}
+          style={{
+            marginBottom: 20,
+            height: 25,
+            fontSize: 16,
+            fontFamily: "Electrolize",
+          }}
           animated
           now={hp}
           label={"HP"}
         />
         <ProgressBar
-          style={{ marginBottom: 20, height: 25, fontSize: 15 }}
+          style={{
+            marginBottom: 20,
+            height: 25,
+            fontSize: 16,
+            fontFamily: "Electrolize",
+          }}
           animated
           now={attack}
-          label={"Ataque"}
+          label={"Attack"}
         />
         <ProgressBar
-          style={{ marginBottom: 20, height: 25, fontSize: 15 }}
+          style={{
+            marginBottom: 20,
+            height: 25,
+            fontSize: 16,
+            fontFamily: "Electrolize",
+          }}
           animated
           now={defense}
-          label={"Defesa"}
+          label={"Defense"}
         />
         <ProgressBar
-          style={{ marginBottom: 20, height: 25, fontSize: 15 }}
+          style={{
+            marginBottom: 20,
+            height: 25,
+            fontSize: 16,
+            fontFamily: "Electrolize",
+          }}
           animated
           now={specialAttack}
-          label={"Ataque Especial"}
+          label={"Special Attack"}
         />
         <ProgressBar
-          style={{ marginBottom: 20, height: 25, fontSize: 15 }}
+          style={{
+            marginBottom: 20,
+            height: 25,
+            fontSize: 16,
+            fontFamily: "Electrolize",
+          }}
           animated
           now={specialDefense}
-          label={"Defesa Especial"}
+          label={"Special Defense"}
         />
         <ProgressBar
-          style={{ marginBottom: 20, height: 25, fontSize: 15 }}
+          style={{
+            marginBottom: 20,
+            height: 25,
+            fontSize: 16,
+            fontFamily: "Electrolize",
+          }}
           animated
           now={speed}
-          label={"Velocidade"}
+          label={"Speed"}
         />
         <Typography
           gutterBottom
@@ -85,23 +150,28 @@ export const PokeDetailsCard = (props) => {
           color={"black"}
           marginTop={4}
           marginBottom={4}
+          fontFamily={"Electrolize"}
         >
           Moves
         </Typography>
 
-        {abilities.map((ability) => {
-          return (
-            <Typography
-              align={"start"}
-              variant={"h6"}
-              color={"#black"}
-              marginTop={4}
-              marginBottom={4}
-            >
-              {ability.ability.name}
-            </Typography>
-          );
-        })}
+        {abilities &&
+          abilities.map((ability) => {
+            return (
+              <Typography
+                key={ability.ability.name}
+                align={"center"}
+                variant={"h6"}
+                fontFamily={"Electrolize"}
+                color={"black"}
+                marginTop={4}
+                marginBottom={4}
+                style={{ textTransform: "capitalize" }}
+              >
+                <MovesDiv>{ability.ability.name}</MovesDiv>
+              </Typography>
+            );
+          })}
       </>
     );
   };
