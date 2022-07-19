@@ -1,7 +1,7 @@
 import pokedexImage from "../../assets/pokedexImage.png";
 import { Typography } from "@mui/material";
 import { PokedexImage, PokeButton } from "./styled";
-import { goToPokedexPage } from "../../routes/coordinator";
+import { goToHomePage, goToPokedexPage } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
 
 export const PokedexButton = (props) => {
@@ -10,7 +10,9 @@ export const PokedexButton = (props) => {
   return (
     <PokeButton
       onClick={() => {
-        goToPokedexPage(navigate);
+        text === "MINHA POKEDEX"
+          ? goToPokedexPage(navigate)
+          : goToHomePage(navigate);
       }}
     >
       <PokedexImage src={pokedexImage} />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { PokeCard } from "../../components/PokeCard/PokeCard";
 import { PokedexButton } from "../../components/PokedexButton/PokedexButton";
@@ -8,8 +8,16 @@ import { PokedexGrid } from "../HomePage/styled";
 import { ScreenContainer } from "./styledPokedex";
 
 export const PokedexPage = () => {
-  const { favorite } = React.useContext(FavoriteContext);
+  const { favorite, setFavorite } = React.useContext(FavoriteContext);
   const navigate = useNavigate();
+
+  // console.log(setFavorite);
+
+  useEffect(() => {
+    const storedPoke = JSON.parse(localStorage.getItem("Favorites"));
+    // console.log(storedPoke);
+    setFavorite(storedPoke);
+  }, []);
 
   return (
     <ScreenContainer>
@@ -19,10 +27,7 @@ export const PokedexPage = () => {
             return <PokeCard key={pokemon.id} name={pokemon} />;
           })}
       </PokedexGrid>
-      <PokedexButton
-        onClick={goToHomePage(navigate)}
-        text={"POKEDEX COMPLETA"}
-      />
+      <PokedexButton text={"POKEDEX COMPLETA"} />
     </ScreenContainer>
   );
 };

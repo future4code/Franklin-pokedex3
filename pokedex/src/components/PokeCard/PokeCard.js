@@ -12,6 +12,8 @@ export const PokeCard = (props) => {
   const [pokedexNumber, setPokedexNumber] = useState();
   const { favorite, addFavorite } = React.useContext(FavoriteContext);
 
+  // console.log(favorite);
+
   const onClickButton = (pokemon) => {
     goToPokeDetailsPage(navigate, pokemon);
     console.log(typeof pokemon);

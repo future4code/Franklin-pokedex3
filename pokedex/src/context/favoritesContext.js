@@ -3,14 +3,15 @@ import React, { useEffect, useState } from "react";
 export const FavoriteContext = React.createContext({});
 
 export const FavoriteProvider = (props) => {
-  const [favorite, setFavorite] = useState();
+  const [favorite, setFavorite] = useState([]);
 
-  useEffect(() => {
-    setFavorite(JSON.parse(localStorage.getItem("Favorites")));
-  }, []);
+  // useEffect(() => {
+  //   setFavorite(JSON.parse(localStorage.getItem("Favorites")));
+  // }, []);
 
   const addFavorite = (pokemon) => {
-    const myFavorites = favorite;
+    const myFavorites = [...favorite];
+    console.log(myFavorites);
     const pokeIndex = myFavorites.indexOf(pokemon);
     myFavorites.includes(pokemon)
       ? myFavorites.splice(pokeIndex, 1)
@@ -20,7 +21,7 @@ export const FavoriteProvider = (props) => {
   };
 
   return (
-    <FavoriteContext.Provider value={{ favorite, addFavorite }}>
+    <FavoriteContext.Provider value={{ favorite, setFavorite, addFavorite }}>
       {props.children}
     </FavoriteContext.Provider>
   );
