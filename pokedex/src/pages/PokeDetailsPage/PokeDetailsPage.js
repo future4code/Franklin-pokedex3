@@ -28,6 +28,7 @@ export const PokeDetailsPage = () => {
               image={pokemon.sprites.other.dream_world.front_default}
               key={pokemon.name}
               abilities={pokemon.abilities}
+              types={pokemon.types}
             />
           );
         })}
