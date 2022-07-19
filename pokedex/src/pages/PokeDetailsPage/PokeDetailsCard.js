@@ -60,7 +60,7 @@ export const PokeDetailsCard = (props) => {
                   textTransform: "capitalize",
                 }}
               >
-                <TypesDiv>{type.type.name}</TypesDiv>
+                <TypesDiv category={type.type.name}>{type.type.name}</TypesDiv>
               </Typography>
             );
           })}

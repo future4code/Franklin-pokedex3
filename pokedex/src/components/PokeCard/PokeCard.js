@@ -4,6 +4,8 @@ import {
   PokeImage,
   PokeImageDiv,
   PokeImageNumberDiv,
+  Types,
+  TypesDiv,
 } from "./styled";
 import pokeball from "../../assets/pokeball-icon.png";
 import { getPokemonsDetails } from "../../services/getPokemonDetails";
@@ -17,6 +19,7 @@ export const PokeCard = (props) => {
   const navigate = useNavigate();
   const [imageUrl, setImageUrl] = useState();
   const [pokedexNumber, setPokedexNumber] = useState();
+  const [type, setType] = useState();
   const { favorite, addFavorite } = React.useContext(FavoriteContext);
 
   const onClickButton = (pokemon) => {
@@ -31,6 +34,7 @@ export const PokeCard = (props) => {
         ? setImageUrl(data.sprites.other.dream_world.front_default)
         : setImageUrl(data.sprites.front_default);
       setPokedexNumber(data.id);
+      setType(data.types);
     };
     loadImage();
   }, [props.name]);
@@ -57,6 +61,26 @@ export const PokeCard = (props) => {
           {props.name}
         </Typography>
       </PokeImageDiv>
+      <TypesDiv>
+        {type &&
+          type.map((type) => {
+            return (
+              <Typography
+                key={type.type.name}
+                fontFamily={"Electrolize"}
+                color={"black"}
+                align={"center"}
+                marginBottom={2.5}
+                style={{
+                  textTransform: "capitalize",
+                }}
+              >
+                <Types category={type.type.name}>{type.type.name}</Types>
+              </Typography>
+            );
+          })}
+      </TypesDiv>
+
       <div>
         <PokeButton onClick={() => onClickButton(props.name)}>
           Detalhes
