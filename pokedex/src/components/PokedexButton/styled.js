@@ -10,6 +10,14 @@ export const PokeButton = styled.button`
   bottom: 25px;
   z-index: 3;
   background-color: transparent;
+  &:hover,
+  &:focus {
+    transition: transform .1s;
+    transform: scale(1.1);
+  }
+  &:active{
+    transform: scale(1.05);
+  }
 `;
 
 export const PokedexImage = styled.img`
