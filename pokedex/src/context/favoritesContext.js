@@ -11,7 +11,6 @@ export const FavoriteProvider = (props) => {
 
   const addFavorite = (pokemon) => {
     const myFavorites = [...favorite];
-    console.log(myFavorites);
     const pokeIndex = myFavorites.indexOf(pokemon);
     myFavorites.includes(pokemon)
       ? myFavorites.splice(pokeIndex, 1)

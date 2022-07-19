@@ -164,8 +164,8 @@ export const PokeDetailsCard = (props) => {
                 variant={"h6"}
                 fontFamily={"Electrolize"}
                 color={"black"}
-                marginTop={4}
-                marginBottom={4}
+                marginTop={2.5}
+                marginBottom={2.5}
                 style={{ textTransform: "capitalize" }}
               >
                 <MovesDiv>{ability.ability.name}</MovesDiv>

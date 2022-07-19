@@ -25,7 +25,7 @@ export const PokedexPage = () => {
       <PokedexGrid>
         {favorite ? (
           favorite.map((pokemon) => {
-            return <PokeCard name={pokemon} />;
+            return <PokeCard key={pokemon} name={pokemon} />;
           })
         ) : (
           <Loading />
