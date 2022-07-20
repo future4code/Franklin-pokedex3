@@ -1,17 +1,21 @@
-# POKEDEX
+## POKEDEX
 
-Nome dos integrantes: 
-- Bruno Britto
+### Nome dos integrantes: 
+- Bruno Britto Fernandes Feitosa
 - Pedro Henrique Durand Reis
 - Raylane Nara Correa Sousa
 
-Link do Surge: https://grupt-pokedex.surge.sh/
+### Link do Surge
+- https://grupt-pokedex.surge.sh/
 
-O que funciona:
--Detalhe Pokemon
--Adicionar na Pokedex
--Remover Pokedex
+### Observação
+- Foi feito mobile first. Se possível testar a aplicação na versão mobile.
 
-O que não funciona: 
+### O que funciona:
+- Detalhe Pokemon
+- Adicionar na Pokedex
+- Remover Pokedex
+
+### O que não funciona
 - Item 3
 - Item 4
