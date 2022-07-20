@@ -17,5 +17,5 @@
 - Remover Pokedex
 
 ### O que não funciona
-- Item 3
-- Item 4
+- Não foi adaptado corretamente para Desktop, criamos utilizando o mobile first.
+- Item 4 (Batalha Pokemon)
