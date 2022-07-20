@@ -11,7 +11,7 @@ export const PokeDiv = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
-export const Types = styled.div`
+export const Types = styled.span`
   display: inline;
   padding: 4px;
   margin: 4px;
