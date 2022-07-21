@@ -2,10 +2,11 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
-import { ArrowBackIconFixed, LogoImageStyled, StyledToolbar } from "./styled";
+import { LogoImageStyled, StyledToolbar } from "./styled";
 import logo from "../../assets/logo-pokemon.png";
 import { goToHomePage } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
+import ArrowBackHeaderIcon from "../ArrowBackHeaderIcon/ArrowBackHeaderIcon";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -14,15 +15,14 @@ export const Header = () => {
     <Box>
       <AppBar position="static">
         <StyledToolbar>
-          <ArrowBackIconFixed
+          <ArrowBackHeaderIcon />
+          <LogoImageStyled
             onClick={() => {
               goToHomePage(navigate);
             }}
+            src={logo}
           />
-          <LogoImageStyled onClick={() => {
-              goToHomePage(navigate);
-            }} src={logo} />
-          <IconButton 
+          <IconButton
             size="large"
             edge="start"
             color="inherit"

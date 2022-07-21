@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Toolbar from "@material-ui/core/Toolbar/Toolbar";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 export const StyledToolbar = styled(Toolbar)`
   display: flex;
@@ -14,15 +13,4 @@ export const StyledToolbar = styled(Toolbar)`
 export const LogoImageStyled = styled.img`
   width: 130px;
   margin-right: 15px;
-`;
-
-export const ArrowBackIconFixed = styled(ArrowBackIcon)`
-    &:hover,
-  &:focus {
-    transition: transform .2s;
-    transform: scale(2.1);
-  }
-  &:active{
-    transform: scale(2.05);
-  }
 `;

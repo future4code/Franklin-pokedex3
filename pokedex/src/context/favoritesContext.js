@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 export const FavoriteContext = React.createContext({});
 
 export const FavoriteProvider = (props) => {
   const [favorite, setFavorite] = useState([]);
+  const [page, setPage] = useState("home");
 
   // useEffect(() => {
   //   setFavorite(JSON.parse(localStorage.getItem("Favorites")));
@@ -20,7 +21,9 @@ export const FavoriteProvider = (props) => {
   };
 
   return (
-    <FavoriteContext.Provider value={{ favorite, setFavorite, addFavorite }}>
+    <FavoriteContext.Provider
+      value={{ favorite, setFavorite, addFavorite, page, setPage }}
+    >
       {props.children}
     </FavoriteContext.Provider>
   );

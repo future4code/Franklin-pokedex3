@@ -8,12 +8,12 @@ import { ScreenContainer } from "./styledPokedex";
 
 export const PokedexPage = () => {
   const { favorite, setFavorite } = React.useContext(FavoriteContext);
+  const { setPage } = React.useContext(FavoriteContext);
 
-  // console.log(setFavorite);
+  setPage("pokedex");
 
   useEffect(() => {
     const storedPoke = JSON.parse(localStorage.getItem("Favorites"));
-    // console.log(storedPoke);
     setFavorite(storedPoke);
   }, []);
 

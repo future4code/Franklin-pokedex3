@@ -4,6 +4,7 @@ import Loading from "../../components/Loading/Loading";
 import { PokeCard } from "../../components/PokeCard/PokeCard";
 import { PokedexButton } from "../../components/PokedexButton/PokedexButton";
 import { BASE_URL } from "../../constants/url";
+import { FavoriteContext } from "../../context/favoritesContext";
 import useRequestData from "../../hooks/useRequestData";
 import { ButtonDiv, PokeButton, PokedexGrid, ScreenContainer } from "./styled";
 
@@ -11,6 +12,9 @@ export const HomePage = () => {
   const navigate = useNavigate();
   const [offset, setOffset] = useState(0);
   const [limit, setLimit] = useState(20);
+  const { setPage } = React.useContext(FavoriteContext);
+
+  setPage("home");
 
   const getPokemons = useRequestData(
     [],

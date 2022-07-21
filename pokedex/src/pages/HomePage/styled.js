@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PokedexGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 25vh);
-  grid-gap: 28px;
+  grid-gap: 45px;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
@@ -28,10 +28,10 @@ export const PokeButton = styled.button`
   margin: 6px;
   &:hover,
   &:focus {
-    transition: transform .2s;
+    transition: transform 0.2s;
     transform: scale(1.1);
   }
-  &:active{
+  &:active {
     transform: scale(1.05);
   }
 `;

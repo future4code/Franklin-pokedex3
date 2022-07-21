@@ -6,8 +6,13 @@ import { Typography } from "@mui/material";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CardImgDiv, CardMediaStyled, MovesDiv, TypesDiv } from "./styled";
+import { FavoriteContext } from "../../context/favoritesContext";
 
 export const PokeDetailsCard = (props) => {
+  const { setPage } = React.useContext(FavoriteContext);
+
+  setPage("details");
+
   const {
     name,
     hp,
