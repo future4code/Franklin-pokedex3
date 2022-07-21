@@ -1,16 +1,21 @@
-# POKEDEX
+## POKEDEX
 
-Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+### Nome dos integrantes: 
+- Bruno Britto Fernandes Feitosa
+- Pedro Henrique Durand Reis
+- Raylane Nara Correa Sousa
 
-Link do Surge: www.link.com.br
+### Link do Surge
+- https://franklin-pokedex3.surge.sh/
 
-O que funciona:
-- Item 1
-- Item 2
+### Observação
+- Foi feito mobile first. Se possível testar a aplicação na versão mobile.
 
-O que não funciona: 
-- Item 3
-- Item 4
+### O que funciona:
+- Detalhe Pokemon
+- Adicionar na Pokedex
+- Remover Pokedex
+
+### O que não funciona
+- Não foi adaptado corretamente para Desktop, criamos utilizando o mobile first.
+- Item 4 (Batalha Pokemon)
