@@ -6,7 +6,7 @@
 - Raylane Nara Correa Sousa
 
 ### Link do Surge
-- https://grupt-pokedex.surge.sh/
+- https://franklin-pokedex3.surge.sh/
 
 ### Observação
 - Foi feito mobile first. Se possível testar a aplicação na versão mobile.
